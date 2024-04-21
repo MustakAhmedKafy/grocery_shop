@@ -1,43 +1,49 @@
-<script setup></script>
+<script setup>
+const socialMedia = [
+  { icon: "fa-facebook-f", link: "#" },
+  { icon: "fa-instagram", link: "#" },
+  { icon: "fa-whatsapp", link: "#" },
+  { icon: "fa-youtube", link: "#" },
+];
+</script>
+
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-        
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+  <section class="header-top d-none d-lg-block py-3">
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <div>
+          <span
+            ><i class="fa-regular fa-clock"></i> Delivery on Next Day from 10:00
+            AM to 08:00 PM</span
+          >
+        </div>
+
+        <div class="header-social">
+          <span
+            ><i class="fa-solid fa-headphones-simple"></i> +1 900 777525</span
+          >
+          <div class="social d-inline">
+            <span v-for="media in socialMedia" :key="media.icon">
+              <i
+                :class="['fa-brands', media.icon]"
+                :aria-label="media.icon"
+              ></i>
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-
+  </section>
 </template>
+
+<style lang="scss">
+.header-top {
+  .header-social span {
+    padding: 0px 5px;
+    color: #577537;
+  }
+  .fa-clock {
+    color: #577537;
+  }
+}
+</style>
