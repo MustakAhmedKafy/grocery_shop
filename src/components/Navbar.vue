@@ -10,15 +10,28 @@ const fruit7 = "./img/fruits-7.jpg";
 const fruit8 = "./img/fruits-8.jpg";
 const discountImage = "./img/tastydaily-0455830109.jpg";
 
-
-
-
 const socialMedia = [
   { icon: "fa-facebook-f", link: "#" },
   { icon: "fa-instagram", link: "#" },
   { icon: "fa-whatsapp", link: "#" },
   { icon: "fa-youtube", link: "#" },
 ];
+
+// Function to handle hover event and open dropdown
+const handleHover = (event) => {
+  const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu");
+  if (dropdownMenu) {
+    dropdownMenu.classList.add("show");
+  }
+};
+
+// Function to handle mouse leave event and close dropdown
+const handleMouseLeave = (event) => {
+  const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu");
+  if (dropdownMenu) {
+    dropdownMenu.classList.remove("show");
+  }
+};
 </script>
 
 <template>
@@ -34,7 +47,7 @@ const socialMedia = [
 
         <div class="header-social">
           <span
-            ><i class="fa-solid fa-headphones-simple"></i> +1 900 777525</span
+            ><i class="fa-solid fa-headphones-simple"></i> +880-171604506</span
           >
           <div class="social d-inline">
             <span v-for="media in socialMedia" :key="media.icon">
@@ -50,22 +63,14 @@ const socialMedia = [
   </section>
   <header>
     <nav class="navbar navbar-expand-lg shadow">
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand" href="#"><img :src="logo" alt="" /></a>
         <button
           class="navbar-toggler collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbar-content"
-        >
-          <div class="hamburger-toggle">
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </button>
+        ></button>
         <div class="collapse navbar-collapse" id="navbar-content">
           <!-- mega menu start-->
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -235,7 +240,7 @@ const socialMedia = [
                           <div class="flex-shrink-0">
                             <img
                               alt="115x115"
-                               :src="fruit2"
+                              :src="fruit2"
                               data-holder-rendered="true"
                             />
                           </div>
@@ -250,7 +255,7 @@ const socialMedia = [
                           <div class="flex-shrink-0">
                             <img
                               alt="115x115"
-                               :src="fruit3"
+                              :src="fruit3"
                               data-holder-rendered="true"
                             />
                           </div>
@@ -272,7 +277,7 @@ const socialMedia = [
                           <div class="flex-shrink-0">
                             <img
                               alt="115x115"
-                             :src="fruit4"
+                              :src="fruit4"
                               data-holder-rendered="true"
                             />
                           </div>
@@ -544,6 +549,9 @@ $primary-color: #577537;
   .header-social span {
     padding: 0px 5px;
     color: $primary-color;
+    &:last-child {
+      padding-right: 0px;
+    }
   }
   .fa-clock {
     color: $primary-color;
@@ -585,29 +593,7 @@ header {
     font-size: 20px;
     padding: 0;
     padding-left: 10px;
-    padding-right: 20px;
   }
-
-  //  .badge:after {
-  //   content: attr(data-count);
-  //   position: absolute;
-  //   background: #f60;
-  //   text-align: center;
-  //   line-height: 2rem;
-  //   font-size: 1rem;
-  //   border-radius: 50%;
-  //   color: #fff;
-  //   border: 1px solid #f60;
-  //   font-family: sans-serif;
-  //   font-weight: bold;
-  //   right: 0px;
-  //   top: -20px;
-  //   height: 25px;
-  //   width: 25px;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
 
   .dropdown-toggle {
     color: $primary-color;
@@ -685,78 +671,6 @@ header {
     &:focus {
       box-shadow: none;
     }
-
-    .hamburger-toggle {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      z-index: 11;
-      // float: right;
-
-      .hamburger {
-        position: absolute;
-        transform: translate(-50%, -50%) rotate(0deg);
-        left: 50%;
-        top: 50%;
-        width: 50%;
-        height: 50%;
-        pointer-events: none;
-
-        span {
-          width: 100%;
-          height: 4px;
-          position: absolute;
-          background: #333;
-          border-radius: 2px;
-          z-index: 1;
-          transition: transform 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-            background 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-            all 0.2s ease-in-out;
-          left: 0px;
-
-          &:first-child {
-            top: 10%;
-            transform-origin: 50% 50%;
-            transform: translate(0% -50%) !important;
-          }
-
-          &:nth-child(2) {
-            top: 50%;
-            transform: translate(0, -50%);
-          }
-
-          &:last-child {
-            left: 0px;
-            top: auto;
-            bottom: 10%;
-            transform-origin: 50% 50%;
-          }
-        }
-
-        &.active {
-          span {
-            position: absolute;
-            margin: 0;
-
-            &:first-child {
-              top: 45%;
-              transform: rotate(45deg);
-            }
-
-            &:nth-child(2) {
-              left: 50%;
-              width: 0px;
-            }
-
-            &:last-child {
-              top: 45%;
-              transform: rotate(-45deg);
-            }
-          }
-        }
-      }
-    }
   }
   h5 {
     color: $primary-color;
@@ -784,10 +698,15 @@ header {
 }
 
 .header-big-sale-img {
-    background: rgba(0, 0, 0, 0) url(img/tastydaily-0455830109.jpg) repeat scroll 0 0 / cover;
-    background-position: bottom right;
-    background-size: cover;
-    border-radius: 20px;
-    padding: 35px 30px 60px 30px;
+  background: rgba(0, 0, 0, 0) url(img/tastydaily-0455830109.jpg) repeat scroll
+    0 0 / cover;
+  background-position: bottom right;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 35px 30px 60px 30px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 </style>
