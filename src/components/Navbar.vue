@@ -18,20 +18,16 @@ const socialMedia = [
 ];
 
 // Function to handle hover event and open dropdown
-const handleHover = (event) => {
-  const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu");
-  if (dropdownMenu) {
-    dropdownMenu.classList.add("show");
-  }
-};
-
-// Function to handle mouse leave event and close dropdown
-const handleMouseLeave = (event) => {
-  const dropdownMenu = event.currentTarget.querySelector(".dropdown-menu");
-  if (dropdownMenu) {
-    dropdownMenu.classList.remove("show");
-  }
-};
+const dropdowns = document.querySelectorAll(".dropdown");
+dropdowns.forEach((element) => {
+  const dropdownItem = element.querySelector(".dropdown-menu");
+  element.addEventListener("mouseover", function () {
+    dropdownItem.classList.add("show");
+  });
+  element.addEventListener("mouseout", function () {
+    dropdownItem.classList.remove("show");
+  });
+});
 </script>
 
 <template>
@@ -70,7 +66,9 @@ const handleMouseLeave = (event) => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbar-content"
-        ></button>
+        >
+          adadasd
+        </button>
         <div class="collapse navbar-collapse" id="navbar-content">
           <!-- mega menu start-->
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -80,13 +78,14 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-shop"></i> Shop</a
+              >
+                Shop</a
               >
               <div class="dropdown-menu shadow">
                 <div class="mega-content px-4">
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-12 col-sm-4 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <h5>Dairy</h5>
                         <p>Whole Milk</p>
                         <p>2% Reduced Fat</p>
@@ -100,7 +99,7 @@ const handleMouseLeave = (event) => {
                         <p>Berries</p>
                         <p>Grapes</p>
                       </div>
-                      <div class="col-12 col-sm-4 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <h5>Cheese</h5>
                         <p>Cheddar</p>
                         <p>Swiss</p>
@@ -115,7 +114,7 @@ const handleMouseLeave = (event) => {
                         <p>Chicken</p>
                         <p>Steak</p>
                       </div>
-                      <div class="col-12 col-sm-4 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <h5>Bread</h5>
                         <p>Whole Wheat</p>
                         <p>White <span class="badge bg-warning">hot</span></p>
@@ -132,7 +131,7 @@ const handleMouseLeave = (event) => {
                         <p>Popcorn</p>
                         <p>Veggie Chips</p>
                       </div>
-                      <div class="col-12 col-sm-4 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <h5>Beverages</h5>
                         <p>Still Water</p>
                         <p>
@@ -163,7 +162,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-pepper-hot"></i> Vegetables</a
+                >Vegetables</a
               >
               <ul class="dropdown-menu shadow">
                 <li><a class="dropdown-item" href="#">Carrots</a></li>
@@ -180,13 +179,15 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-apple-whole"></i> Fresh Fruits</a
+                >Fresh Fruits</a
               >
               <div class="dropdown-menu shadow">
-                <div class="mega-content px-4">
+                <div
+                  class="mega-content text-lg-start text-md-start text-center px-4"
+                >
                   <div class="container-fluid">
                     <div class="row">
-                      <div class="col-12 col-sm-3 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <h5>Citrus Fruits</h5>
                         <p>Orange</p>
                         <p>Lemon</p>
@@ -200,7 +201,7 @@ const handleMouseLeave = (event) => {
                         <p>Raspberry</p>
                         <p>Blackberry</p>
                       </div>
-                      <div class="col-12 col-sm-3 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <div class="d-flex align-items-center">
                           <div class="flex-shrink-0">
                             <img
@@ -272,7 +273,7 @@ const handleMouseLeave = (event) => {
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 col-sm-3 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <div class="d-flex align-items-center">
                           <div class="flex-shrink-0">
                             <img
@@ -344,7 +345,7 @@ const handleMouseLeave = (event) => {
                           </div>
                         </div>
                       </div>
-                      <div class="col-12 col-sm-3 col-md-3 py-4">
+                      <div class="col-12 col-lg-3 col-md-6 py-4">
                         <div class="header-big-sale-img">
                           <h2>Big Sale for Strawberries!</h2>
                           <p class="display-5 fw-bold">-50%</p>
@@ -364,7 +365,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-drumstick-bite"></i> Meat</a
+                >Meat</a
               >
               <ul class="dropdown-menu shadow">
                 <li><a class="dropdown-item" href="#">Halal Chicken</a></li>
@@ -380,7 +381,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-fish"></i> Seafood</a
+                >Seafood</a
               >
               <ul class="dropdown-menu shadow">
                 <li><a class="dropdown-item" href="#">Salmon</a></li>
@@ -396,7 +397,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-bread-slice"></i> Baking</a
+                >Baking</a
               >
               <ul class="dropdown-menu shadow">
                 <li><a class="dropdown-item" href="#">Cupcakes</a></li>
@@ -412,7 +413,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-champagne-glasses"></i> Drinks</a
+                >Drinks</a
               >
               <ul class="dropdown-menu shadow">
                 <li>
@@ -441,7 +442,7 @@ const handleMouseLeave = (event) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                ><i class="fa-solid fa-list"></i> Others</a
+                >Others</a
               >
               <ul class="dropdown-menu shadow">
                 <li>
@@ -485,14 +486,14 @@ const handleMouseLeave = (event) => {
               </div>
             </div>
             <div>
-              <span class="d-inline"><i class="fa-solid fa-user"></i></span>
+              <span class="d-inline"><i class="fa-regular fa-user"></i></span>
 
               <!-- Cart Drawer Modal -->
               <div class="content d-inline">
                 <a class="text-decoration-none menu-click">
                   <i
                     data-count="3"
-                    class="fa-solid fa-cart-shopping badge d-inline"
+                    class="fa-solid fa-cart-shopping d-inline"
                   ></i>
                 </a>
               </div>

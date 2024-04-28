@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+/*only mobile area */
+@media (max-width: 768px) {
+}
+
+/* tab area only  */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* sm and md */
+@media (max-width: 991.98px) {
+  header .nav-item.dropdown.dropdown-mega .dropdown-menu {
+    width: 100%;
+  }
+}
+
+/* // desktop area only */
+@media (min-width: 992px) {
+}
