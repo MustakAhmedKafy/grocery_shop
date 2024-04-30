@@ -1,15 +1,18 @@
 <script setup>
+import Title from "./Title.vue";
 const HalalFood = "./img/Hala_Food.jpg";
 
 const images = [
+  { src: "./img/Fast_Food.jpg", alt: "Fast Food" },
   { src: "./img/Oil.jpg", alt: "Oil" },
-  { src: "./img/Drinks.jpg", alt: "Drinks" },
+  { src: "./img/Vegetable.jpg", alt: "Vegetable" },
+  { src: "./img/Dairy_Item.jpg", alt: "Dairy Item" },
 ];
 </script>
 
 <template>
   <section class="product-item py-5">
-    <h2 class="pb-4 text-center">Top Categories</h2>
+   <Title :title="'Top Categories'"></Title>
     <div class="container">
       <div class="row">
         <div class="col-md-6 mt-3">
