@@ -63,7 +63,7 @@ const logo = "./img/logo.png";
   </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $primary-color: #577537;
 $secondary-color: red;
 footer {
@@ -96,8 +96,6 @@ footer {
       display: inline;
       text-align: left;
       padding-right: 5px;
-      color: #f2f2f2f;
-
       transition: 0.7s;
 
       &:hover {
