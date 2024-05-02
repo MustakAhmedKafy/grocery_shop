@@ -1,42 +1,56 @@
 <script setup>
 import Title from "./Title.vue";
 const imgUrl = "./img/items-01.jpg";
+const props = defineProps([
+  "offerHeader",
+  "offer",
+  "image",
+  "extraOff",
+  "extraOffDiscount",
+  "title",
+  "collectionPrice",
+  "collectionOfferPrice",
+  "deliveryPrice",
+  "deliveryOfferPrice",
+]);
 </script>
 
 <template>
-  <div class="container">
-    <Title :title="'Top Products'" />
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card position-relative">
-          <div class="card-header border-0 d-flex justify-content-between">
-            <p class="text-white m-0">Offer end 29/02</p>
-            <span class="text-white"><i class="fa-solid fa-heart"></i></span>
-          </div>
-          <img :src="imgUrl" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h6 class="text-center extra-off text-white">
-              Extra
-              <span class="fw-bold"
-                ><i class="fa-solid fa-sterling-sign"></i>3</span
-              >
-              OFF
-            </h6>
-            <h6 class="card-title text-center">AUSTRALIAN BEEF CUBE</h6>
-            <div class="d-flex justify-content-between py-1">
-              <span class="rounded-pill price"><del>Col: £17.99</del></span>
-              <span class="rounded-pill price"><del>Del: £18.99</del></span>
-            </div>
-            <div class="d-flex justify-content-between py-1">
-              <span class="rounded-pill price2">Col: £14.99</span>
-              <span class="rounded-pill price2">Del: £15.99</span>
-            </div>
-            <a href="cart.html" class="btn btn-primary p-1 w-100 mt-2"
-              >Add to basket <i class="fa-solid fa-cart-shopping"></i
-            ></a>
-          </div>
-        </div>
+  <div class="card position-relative border-0 shadow">
+    <div
+      v-if="offerHeader"
+      class="card-header border-0 d-flex justify-content-between rounded-top"
+    >
+      <p class="text-white m-0">{{ offer }}</p>
+      <span class="text-white"><i class="fa-solid fa-heart"></i></span>
+    </div>
+    <img :src="image" class="card-img-top rounded-top" alt="..." />
+    <div class="card-body">
+      <h6 v-if="extraOff" class="text-center extra-off text-white extraOff">
+        Extra
+        <span class="fw-bold"
+          ><i class="fa-solid fa-sterling-sign"></i>{{ extraOffDiscount }}</span
+        >
+        OFF
+      </h6>
+      <h6 class="card-title text-center">{{ title }}</h6>
+      <div class="d-flex justify-content-between py-1">
+        <span class="rounded-pill price"
+          ><del>Col: £{{ collectionPrice }}</del></span
+        >
+        <span class="rounded-pill price"
+          ><del>Del: £{{ deliveryPrice }}</del></span
+        >
       </div>
+      <div class="d-flex justify-content-between py-1">
+        <span class="rounded-pill price2"
+          >Col: £{{ collectionOfferPrice }}</span
+        >
+        <span class="rounded-pill price2">Del: £{{ deliveryOfferPrice }}</span>
+      </div>
+      <a href="cart.html" class="btn btn-primary p-1 w-100 mt-2"
+        >Add to basket <i class="fa-solid fa-cart-shopping"></i
+      ></a>
     </div>
   </div>
 </template>
