@@ -1,5 +1,11 @@
 <script setup>
 const logo = "./img/logo.png";
+const socialIcons = [
+  { icon: "fa-facebook-f", link: "#" },
+  { icon: "fa-instagram", link: "#" },
+  { icon: "fa-whatsapp", link: "#" },
+  { icon: "fa-youtube", link: "#" },
+];
 </script>
 <template>
   <footer class="py-5 text-center">
@@ -47,10 +53,12 @@ const logo = "./img/logo.png";
           <p><a href="">info@msfoods.co.uk</a></p>
           <div class="social-icon">
             <ul>
-              <li><i class="fa-brands fa-twitter"></i></li>
-              <li><i class="fa-brands fa-facebook"></i></li>
-              <li><i class="fa-brands fa-youtube"></i></li>
-              <li><i class="fa-brands fa-instagram"></i></li>
+              <li v-for="(social, index) in socialIcons" :key="index">
+                <i
+                  :class="['fa-brands', social.icon]"
+                  :aria-label="social.icon"
+                ></i>
+              </li>
             </ul>
           </div>
         </div>
@@ -65,7 +73,6 @@ const logo = "./img/logo.png";
 
 <style lang="scss" scoped>
 $primary-color: #577537;
-$secondary-color: red;
 footer {
   a {
     text-decoration: none;

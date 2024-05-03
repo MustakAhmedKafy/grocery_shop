@@ -1,5 +1,5 @@
 <script setup>
-import Title from "./Title.vue";
+import Title from "../reusable/Title.vue";
 const brands = [
   { src: "./img/Amul_dairy_logo.png", alt: "Amul_dairy_logo" },
   { src: "./img/Coke.jpg", alt: "Coke.jpg" },

@@ -1,6 +1,6 @@
 <script setup>
+import PrimaryButton from "./PrimaryButton.vue"
 import Title from "./Title.vue";
-const imgUrl = "./img/items-01.jpg";
 const props = defineProps([
   "offerHeader",
   "offer",
@@ -48,9 +48,7 @@ const props = defineProps([
         >
         <span class="rounded-pill price2">Del: £{{ deliveryOfferPrice }}</span>
       </div>
-      <a href="cart.html" class="btn btn-primary p-1 w-100 mt-2"
-        >Add to basket <i class="fa-solid fa-cart-shopping"></i
-      ></a>
+     <PrimaryButton link="#" title="Add to basket" color="primary"/>
     </div>
   </div>
 </template>
@@ -60,7 +58,7 @@ $primary-color: #577537;
 .card {
   .price {
     background-color: #e1e1e1;
-    padding: 0px 7px;
+    padding: 0px 8px;
     font-size: 13px;
     color: #000;
   }
@@ -143,16 +141,16 @@ $primary-color: #577537;
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 4px 8px;
+    padding: 6px 12px;
     background-color: #ff6666;
   }
 
   .extra-off {
     position: absolute;
     top: 170px;
-    left: 10px;
+    left: 14px;
     background-color: #00a967;
-    padding: 5px 10px;
+    padding: 5px 10px 7px 10px;
     border-radius: 50px;
   }
 

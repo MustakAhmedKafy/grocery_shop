@@ -1,5 +1,5 @@
 <script setup>
-import Title from "./Title.vue";
+import Title from "../reusable/Title.vue";
 const imgUrl = "./img/items-01.jpg";
 </script>
 
@@ -30,7 +30,35 @@ const imgUrl = "./img/items-01.jpg";
               >
             </p>
           </div>
+
+          <!--  -->
+          <div class="container">
+            <div class="row justify-content-center">
+             
+            </div>
+          </div>
         </div>
+         <div class="col-lg-4 col-md-8">
+                <div class="card shadow">
+                  <img
+                    class="card-img"
+                    src="https://source.unsplash.com/1600x900/?succulent,green,dark,table"
+                    alt="succulent"
+                  />
+                  <div class="card-img-overlay text-white">
+                    <h5 class="card-title">Card Title</h5>
+                    <p class="card-text">lorem ipsum dolor set amet</p>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title">Another Title</h4>
+                    <p class="card-text">
+                      <small class="text-muted">
+                        Last updated 3 mins ago
+                      </small>
+                    </p>
+                  </div>
+                </div>
+              </div>
       </div>
     </div>
   </div>

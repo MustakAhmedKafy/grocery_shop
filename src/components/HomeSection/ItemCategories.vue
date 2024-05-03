@@ -1,5 +1,5 @@
 <script setup>
-import Title from "./Title.vue";
+import Title from "../reusable/Title.vue";
 const HalalFood = "./img/Hala_Food.jpg";
 
 const images = [
