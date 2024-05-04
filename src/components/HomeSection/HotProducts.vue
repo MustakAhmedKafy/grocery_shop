@@ -1,5 +1,6 @@
 <script setup>
 import HotProductsCard from "../reusable/HotProductsCard.vue";
+
 import Title from "../reusable/Title.vue";
 const imgUrl = "./img/items-01.jpg";
 const hotItems = [

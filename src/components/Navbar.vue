@@ -17,7 +17,13 @@ const socialMedia = [
   { icon: "fa-youtube", link: "#" },
 ];
 
-// Function to handle hover event and open dropdown
+// click dropdown stop
+const toggleDropdown = (event) => {
+  const dropdown = event.target.nextElementSibling;
+  dropdown.classList.toggle("show");
+};
+
+// hover dropdown
 const dropdowns = document.querySelectorAll(".dropdown");
 dropdowns.forEach((element) => {
   const dropdownItem = element.querySelector(".dropdown-menu");
@@ -78,6 +84,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
               >
                 Shop</a
               >
@@ -162,6 +169,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Vegetables</a
               >
               <ul class="dropdown-menu shadow">
@@ -179,6 +187,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Fresh Fruits</a
               >
               <div class="dropdown-menu shadow">
@@ -365,6 +374,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Meat</a
               >
               <ul class="dropdown-menu shadow">
@@ -381,6 +391,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Seafood</a
               >
               <ul class="dropdown-menu shadow">
@@ -397,6 +408,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Baking</a
               >
               <ul class="dropdown-menu shadow">
@@ -413,6 +425,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                @click="toggleDropdown"
                 >Drinks</a
               >
               <ul class="dropdown-menu shadow">
@@ -442,6 +455,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
+                 @click="toggleDropdown"
                 >Others</a
               >
               <ul class="dropdown-menu shadow">

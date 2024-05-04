@@ -9,6 +9,11 @@ p {
   padding: 0;
 }
 
+.dropdown-menu {
+  --bs-dropdown-spacer: 0rem !important;
+  left: 5px !important;
+}
+
 /*only mobile area */
 @media (max-width: 768px) {
 }
