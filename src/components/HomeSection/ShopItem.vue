@@ -29,7 +29,7 @@ const productsItem = [
 ];
 </script>
 <template>
-  <section>
+  <section class="bg-color">
     <div class="container py-5">
       <div class="row">
         <div class="col-md-3" v-for="items in productsItem" :key="index">

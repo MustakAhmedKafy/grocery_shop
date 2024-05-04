@@ -3,6 +3,12 @@
 * {
   font-family: "Quicksand", sans-serif;
 }
+
+p {
+  margin: 0 !important;
+  padding: 0;
+}
+
 /*only mobile area */
 @media (max-width: 768px) {
 }

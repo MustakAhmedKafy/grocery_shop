@@ -1,6 +1,5 @@
 <script setup>
 import PrimaryButton from "./PrimaryButton.vue"
-import Title from "./Title.vue";
 const props = defineProps([
   "offerHeader",
   "offer",

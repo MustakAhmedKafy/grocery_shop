@@ -15,4 +15,5 @@ import HomePage from "./HomePage.vue";
 .bg-color {
   background-color: #f0feee;
 }
+
 </style>
