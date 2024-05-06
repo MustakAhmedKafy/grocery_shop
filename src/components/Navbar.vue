@@ -1,4 +1,24 @@
 <script setup>
+import { ref } from "vue";
+import NavCart from "./reusable/NavCart.vue";
+
+const showCart = ref(false);
+
+const toggleCart = () => {
+  showCart.value = !showCart.value;
+  console.log("showCart value:", showCart.value);
+};
+
+function handleClickOutside(event) {
+  if (!event.target.closest(".header-cart")) {
+    showCart.value = false; // Change isCartOpen to showCart
+  }
+}
+
+function closeCart() {
+  showCart.value = false;
+}
+
 const logo = "./img/logo.png";
 const fruit1 = "./img/fruits-1.jpg";
 const fruit2 = "./img/fruits-2.jpg";
@@ -455,7 +475,7 @@ dropdowns.forEach((element) => {
                 href="#"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                 @click="toggleDropdown"
+                @click="toggleDropdown"
                 >Others</a
               >
               <ul class="dropdown-menu shadow">
@@ -503,52 +523,20 @@ dropdowns.forEach((element) => {
               <span class="d-inline"><i class="fa-regular fa-user"></i></span>
 
               <!-- Cart Drawer Modal -->
-              <div class="content d-inline">
-                <a class="text-decoration-none menu-click">
-                  <i
-                    data-count="3"
-                    class="fa-solid fa-cart-shopping d-inline"
-                  ></i>
-                </a>
+              <div class="d-inline cart-sidebar">
+                <div class="d-inline">
+                  <a class="text-decoration-none" @click="toggleCart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                  </a>
+                </div>
+                <!--  -->
+                <NavCart :showCart="showCart" @close="closeCart" />
+                <div
+                  class="overlay"
+                  :class="{ show: showCart }"
+                  @click="handleClickOutside"
+                ></div>
               </div>
-              <!--  -->
-              <div class="menu px-2">
-                <a class="btn menu-click">
-                  <i class="fa fa-times" aria-hidden="true"></i>
-                </a>
-                <h5 class="py-3">Shopping Cart 2</h5>
-                <table class="table text-white table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">Item</th>
-                      <th scope="col">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Potato</td>
-                      <td>10</td>
-                    </tr>
-                    <tr>
-                      <td>Chicken</td>
-                      <td>200</td>
-                    </tr>
-                  </tbody>
-                  <thead class="border-0">
-                    <tr class="border-0">
-                      <th scope="col">Subtotal</th>
-                      <th scope="col">300</th>
-                    </tr>
-                  </thead>
-                </table>
-                <button class="btn btn-outline-primary w-100 mt-2">
-                  View Cart <i class="fa-solid fa-cart-shopping"></i>
-                </button>
-                <button class="btn btn-outline-warning w-100 mt-2">
-                  Checkout <i class="fa-solid fa-check"></i>
-                </button>
-              </div>
-              <div class="overlay"></div>
             </div>
           </div>
         </div>
@@ -689,26 +677,6 @@ header {
   }
   h5 {
     color: $primary-color;
-  }
-  // drawer
-  .menu {
-    h5 {
-      color: #fff;
-    }
-    .btn {
-      color: white;
-      .fa {
-        margin-left: 8px;
-      }
-    }
-    background-color: $primary-color;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    right: -250px;
-    transition: all 0.2s ease-out;
-    z-index: 9999;
   }
 }
 
