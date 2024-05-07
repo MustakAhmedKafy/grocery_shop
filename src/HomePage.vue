@@ -4,6 +4,7 @@ import ItemCategories from "./components/HomeSection/ItemCategories.vue";
 import ShopItem from "./components/HomeSection/ShopItem.vue";
 import Brands from "./components/HomeSection/Brands.vue";
 import HotProducts from "./components/HomeSection/HotProducts.vue";
+import DiscountItem from "./components/HomeSection/DiscountItem.vue";
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import HotProducts from "./components/HomeSection/HotProducts.vue";
     <Banner />
     <ItemCategories />
     <ShopItem />
+    <DiscountItem />
     <HotProducts />
     <Brands />
   </div>

@@ -11,9 +11,9 @@ const images = [
 </script>
 
 <template>
-  <section class="product-item py-5">
+  <section class="product-item pb-5">
    <Title :title="'Top Categories'"></Title>
-    <div class="container">
+    <div class="container pt-4">
       <div class="row">
         <div class="col-md-6 mt-3">
           <a href="shop.html">

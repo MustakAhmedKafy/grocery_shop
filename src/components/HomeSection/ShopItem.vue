@@ -1,4 +1,5 @@
 <script setup>
+import Title from "../reusable/Title.vue";
 import ProductCard from "../reusable/ProductCard.vue";
 const productsItem = [
   {
@@ -26,12 +27,52 @@ const productsItem = [
     deliveryPrice: 7,
     deliveryOfferPrice: 5,
   },
+  {
+    offerHeader: false,
+    offer: "Offer end ",
+
+    image: "./img/items-01.jpg",
+    extraOff: false,
+    extraOffDiscount: 0,
+    title: "Product 2 Title",
+    collectionPrice: 70,
+    collectionOfferPrice: 55,
+    deliveryPrice: 7,
+    deliveryOfferPrice: 5,
+  },
+  {
+    offerHeader: false,
+    offer: "Offer end ",
+
+    image: "./img/items-01.jpg",
+    extraOff: false,
+    extraOffDiscount: 0,
+    title: "Product 2 Title",
+    collectionPrice: 70,
+    collectionOfferPrice: 55,
+    deliveryPrice: 7,
+    deliveryOfferPrice: 5,
+  },
+  {
+    offerHeader: false,
+    offer: "Offer end ",
+
+    image: "./img/items-01.jpg",
+    extraOff: false,
+    extraOffDiscount: 0,
+    title: "Product 2 Title",
+    collectionPrice: 70,
+    collectionOfferPrice: 55,
+    deliveryPrice: 7,
+    deliveryOfferPrice: 5,
+  },
 ];
 </script>
 <template>
   <section class="bg-color">
+    <Title :title="'Featured Products'" />
     <div class="container py-5">
-      <div class="row">
+      <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
         <div class="col-md-3" v-for="items in productsItem" :key="index">
           <ProductCard
             :offerHeader="items.offerHeader"

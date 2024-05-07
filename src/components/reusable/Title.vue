@@ -2,8 +2,8 @@
 const props = defineProps(["title"]);
 </script>
 <template>
-  <div>
-    <h2 class="pb-4 text-center">{{ title }}</h2>
+  <div class="pt-5">
+    <h2 class=" text-center">{{ title }}</h2>
   </div>
 </template>
 <style lang="scss" scoped>
