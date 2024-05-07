@@ -24,8 +24,13 @@ const images = [{ src: "./img/discount-img.jpg", alt: "discount products" }];
 <style lang="scss" scoped>
 .card {
   border-radius: 30px;
-  img{
+    transition: all 1s ease-out;
+  img {
     border-radius: 30px;
+  }
+  &:hover {
+    transform: translateY(-10px);
+    transition: all 1s ease-out;
   }
 }
 </style>

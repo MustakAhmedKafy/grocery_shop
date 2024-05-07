@@ -9,9 +9,13 @@ p {
   padding: 0;
 }
 
-.dropdown-menu {
+header .dropdown-menu {
   --bs-dropdown-spacer: 0rem !important;
   left: 5px !important;
+}
+
+header .mega-dropdown {
+  left: 5% !important;
 }
 
 .overlay {

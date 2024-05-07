@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import NavCart from "./reusable/NavCart.vue";
 
-
 const showCart = ref(false);
 
 const toggleCart = () => {
@@ -109,7 +108,7 @@ dropdowns.forEach((element) => {
               >
                 Shop</a
               >
-              <div class="dropdown-menu shadow">
+              <div class="dropdown-menu mega-dropdown shadow">
                 <div class="mega-content px-4">
                   <div class="container-fluid">
                     <div class="row">
@@ -211,7 +210,7 @@ dropdowns.forEach((element) => {
                 @click="toggleDropdown"
                 >Fresh Fruits</a
               >
-              <div class="dropdown-menu shadow">
+              <div class="dropdown-menu mega-dropdown shadow">
                 <div
                   class="mega-content text-lg-start text-md-start text-center px-4"
                 >
@@ -489,17 +488,13 @@ dropdowns.forEach((element) => {
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    Canned Goods</a
-                  >
+                  <a class="dropdown-item" href="#"> Canned Goods</a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"> Breakfast Cereals</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#">
-                    Snack Items</a
-                  >
+                  <a class="dropdown-item" href="#"> Snack Items</a>
                 </li>
               </ul>
             </li>
@@ -546,7 +541,7 @@ dropdowns.forEach((element) => {
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $primary-color: #577537;
 
 .header-top {
@@ -584,6 +579,7 @@ header {
   .dropdown {
     padding: 0px 4px;
   }
+
 
   .fa-user {
     font-size: 20px;
@@ -658,6 +654,7 @@ header {
     padding: 6px;
     border: 0;
   }
+
 
   // Mega Menu adjustments
   .nav-item.dropdown.dropdown-mega {
