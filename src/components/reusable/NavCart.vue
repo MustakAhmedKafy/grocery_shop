@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps, ref, defineEmits } from "vue";
-
 const props = defineProps({
   showCart: Boolean,
 });
@@ -16,7 +14,7 @@ function closeCart() {
   <div v-show="showCart" class="header-cart">
     <!--  -->
     <div class="menu px-3 text-white">
-      <a class="btn menu-click pe-4 my-2" @click="closeCart" >
+      <a class="btn menu-click pe-4 my-2" @click="closeCart">
         <i class="fa fa-times"></i>
       </a>
       <h5 class="py-3">Shopping Cart 2</h5>
@@ -39,7 +37,7 @@ function closeCart() {
         <h6>£1200.00</h6>
       </div>
       <a href="cart.html">
-        <button class="btn btn-outline-primary w-100 mt-2">
+        <button class="btn btn-light w-100 mt-2">
           View Cart <i class="fa-solid fa-cart-shopping"></i></button
       ></a>
       <a href="checkout.html">
@@ -47,7 +45,6 @@ function closeCart() {
           Checkout <i class="fa-solid fa-check"></i></button
       ></a>
     </div>
-    
   </div>
 </template>
 
@@ -67,20 +64,19 @@ $primary-color: #577537;
     h5 {
       color: #fff;
     }
-
-    .btn {
+    .menu-click {
       color: white;
-
       .fa {
         margin-left: 8px;
       }
     }
+
+   
   }
 
-  .fa-solid {
-    color: $primary-color;
-    font-size: 20px;
-  }
+  // .fa-solid {
+  //   color: #fff;
+  //   font-size: 20px;
+  // }
 }
-
 </style>

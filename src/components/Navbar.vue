@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import NavCart from "./reusable/NavCart.vue";
 
+
 const showCart = ref(false);
 
 const toggleCart = () => {
@@ -484,12 +485,12 @@ dropdowns.forEach((element) => {
                 </li>
                 <li>
                   <a class="dropdown-item" href="blog.html"
-                    >Personal Care Products (e.g., shampoo, toothpaste)</a
+                    >Personal Care Products</a
                   >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    Canned Goods (e.g., soups, vegetables)</a
+                    Canned Goods</a
                   >
                 </li>
                 <li>
@@ -497,7 +498,7 @@ dropdowns.forEach((element) => {
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    Snack Items (e.g., chips, nuts)</a
+                    Snack Items</a
                   >
                 </li>
               </ul>
@@ -568,6 +569,8 @@ header {
 
   .nav-link {
     color: $primary-color;
+    font-weight: 500;
+    font-size: 17px;
   }
 
   .nav-item {
@@ -652,6 +655,8 @@ header {
       -webkit-animation: fadeIn 0.3s alternate;
       animation: fadeIn 0.3s alternate;
     }
+    padding: 6px;
+    border: 0;
   }
 
   // Mega Menu adjustments
@@ -677,6 +682,14 @@ header {
   }
   h5 {
     color: $primary-color;
+  }
+  .dropdown-item {
+    font-weight: 500;
+  }
+  .dropdown-item:hover {
+    background-color: #e9ecef;
+    color: $primary-color;
+    border-radius: 7px;
   }
 }
 
