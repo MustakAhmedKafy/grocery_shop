@@ -8,7 +8,7 @@ const socialIcons = [
 ];
 </script>
 <template>
-  <footer class="py-5 text-center">
+  <footer class="py-5 text-center bg-color">
     <div class="container">
       <div class="row">
         <div class="col-lg-2 col-md-2 col-6 mb-3">

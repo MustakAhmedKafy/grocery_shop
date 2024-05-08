@@ -24,7 +24,7 @@ const brands = [
         <div
           v-for="(brand, index) in brands"
           :key="index"
-          class="col-lg-2 col-md-4 col-6 mt-2"
+          class="col-lg-2 col-md-4 col-6 mt-3"
         >
           <a href="#">
             <div class="card p-2 shadow border-0">
